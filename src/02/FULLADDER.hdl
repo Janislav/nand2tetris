@@ -1,0 +1,14 @@
+CHIP FULLADDER {
+
+   IN a, b, c;
+   OUT sum, carry;
+
+   PARTS:
+
+   AND(a=a, b=b, out=and1out);
+   XOR(a=a,b=b,out=xor1out);
+   AND(a=xor1out, b=c, out=and2out);
+   OR(a=and1out, b=and2out, out=carry);
+   XOR(a=xor1out, b=c, out=sum);
+
+}
