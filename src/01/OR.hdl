@@ -1,0 +1,12 @@
+CHIP OR {
+    //Don't work!
+    IN a, b;
+    OUT out;
+
+    PARTS:
+    NOT(a=a, out=aFalse); //Wahr wenn Pin a falsch
+    NOT(a=b, out=bFalse); //Wahr wenn Pin b falsch
+    AND(a=aFalse, b=bFalse, out=aAndbFalse); //Wahr wenn Pin a und b falsch
+    NOT(a=aAndbFalse, out=out); 
+
+}

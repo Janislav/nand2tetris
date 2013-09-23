@@ -1,0 +1,13 @@
+CHIP MUX {
+
+   IN a, b, sel; 
+   OUT out;
+   PARTS:
+
+   NOT(a=sel, out=turnedsel);
+
+   AND(a=a, b=turnedsel, out=isa);
+   AND(a=b, b=turnedsel, out=isb);
+
+   OR(a=isa, b=isb, out=out);
+}

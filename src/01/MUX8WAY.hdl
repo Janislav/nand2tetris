@@ -1,0 +1,14 @@
+CHIP MUX8WAY {
+
+    IN a, b, c, d, e, f, g, h, sel[3];
+    OUT out;
+
+    PARTS:
+
+    MUX4WAY(a=a, b=b, c=c, d=d, sel[0]=sel[0], sel[1]=sel[1], out=outMux1);
+
+    MUX4WAY(a=e, b=f, c=g, d=h, sel[0]=sel[0], sel[1]=sel[1], out=outMux2);
+
+    MUX(a=outMux1, b=outMux2, sel=sel[3], out=out);
+
+}
