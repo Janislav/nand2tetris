@@ -1,0 +1,12 @@
+CHIP INC16 {
+
+     IN in[16];
+     OUT out[16];
+
+     PARTS:
+
+     INCORDECVALUE(in=in[0], out=ValueNumberOne);
+
+     ADD16(a=in, b=ValueNumberOne, out=out);
+
+}

@@ -1,0 +1,34 @@
+CHIP INCORDECVALUE {
+
+IN in;
+OUT out[16];
+
+PARTS:
+
+// Creating constants which we've to use to code the ceratin nummber
+// 0000000000000001 = 1!
+
+NOT(a=in, out=turnAroundValue);
+
+XOR(a=in, b=turnAroundValue, out=stateTrue);
+
+NOT(a=stateTrue, out=stateFalse);
+
+NOT(a=stateFalse, out=out[0]);
+NOT(a=stateTrue, out=out[1]);
+NOT(a=stateTrue, out=out[2]);
+NOT(a=stateTrue, out=out[3]);
+NOT(a=stateTrue, out=out[4]);
+NOT(a=stateTrue, out=out[5]);
+NOT(a=stateTrue, out=out[6]);
+NOT(a=stateTrue, out=out[7]);
+NOT(a=stateTrue, out=out[8]);
+NOT(a=stateTrue, out=out[9]);
+NOT(a=stateTrue, out=out[10]);
+NOT(a=stateTrue, out=out[11]);
+NOT(a=stateTrue, out=out[12]);
+NOT(a=stateTrue, out=out[13]);
+NOT(a=stateTrue, out=out[14]);
+NOT(a=stateTrue, out=out[15]);
+
+}
